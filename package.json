@@ -1,0 +1,23 @@
+{
+  "name": "lib-operations-db",
+  "version": "1.0.0",
+  "description": "Operations for DynamoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "author": "MMC",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "dynamoose": "^2.8.6"
+  }
+}
