@@ -1,6 +1,6 @@
 {
   "name": "lib-operations-db",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Operations for DynamoDB",
   "main": "index.js",
   "scripts": {

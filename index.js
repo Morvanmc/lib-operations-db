@@ -8,13 +8,11 @@ dynamoose.aws.sdk.config.update({
 });
 
 function create(model, data) {
-    const result = model.create(data).then(() => {
-        return 'Success Created!'
-    }).catch((err) => {
+    try {
+        return model.create(data);
+    } catch (err) {
         return `Error: ${err}`
-    })
-
-    return result
+    }
 }
 
 function getAll(model) {
@@ -34,14 +32,21 @@ function getOne(model, id) {
 
 }
 
-function update(model, id, data) {
-    const result = model.update({ id }, { ...data }).then(() => {
-        return 'Success Updated!'
-    }).catch((err) => {
+function searchBy(model, data) {
+    try {
+        return model.scan(data.key).eq(data.value).exec();
+    } catch (err) {
         return `Error: ${err}`
-    })
+    }
 
-    return result
+}
+
+function update(model, id, data) {
+    try {
+        return model.update({ id }, { ...data });
+    } catch (err) {
+        return `Error: ${err}`
+    }
 }
 
 function destroy(model, id) {
@@ -58,6 +63,7 @@ module.exports = {
     create,
     getAll,
     getOne,
+    searchBy,
     update,
     destroy
 }
